@@ -27,8 +27,8 @@ class User extends \TCG\Voyager\Models\User
         'password', 'remember_token',
     ];
 
-    public function posts()
+    public function teacher()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(Teacher::class);
     }
 }

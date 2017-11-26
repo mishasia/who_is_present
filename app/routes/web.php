@@ -31,3 +31,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/plan/add', 'PlanController@add')->name('plan.add');
 Route::get('/plan/history', 'PlanController@history')->name('plan.history');
+Route::post('/plan/save', 'PlanController@save')->name('plan.save');
