@@ -28,4 +28,19 @@ class Teacher extends Model
         'password', 'remember_token',
     ];
 
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function highStatus()
+    {
+        return $this->belongsTo(HighStatus::class);
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
 }
