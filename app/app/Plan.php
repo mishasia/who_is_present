@@ -25,4 +25,8 @@ class Plan extends Model
     {
         $query->where('date_end', '>', Carbon::now());
     }
+
+
+
+
 }

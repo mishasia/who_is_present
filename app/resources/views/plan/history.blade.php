@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
     <table class="table">
         <thead>
         <tr>
             <th>Коментар</th>
             <th>Дата початку</th>
             <th>Дата закінчення</th>
+            <th>Дія</th>
         </tr>
         </thead>
         <tbody>
@@ -15,6 +17,22 @@
                 <td>{{ $plan->comment }}</td>
                 <td>{{ $plan->date_start }}</td>
                 <td>{{ $plan->date_end }}</td>
+                <td>
+                    <a href="{{ route('plan.edit', $plan->id) }}"> <i class="glyphicon glyphicon-edit"></i>  </a>
+
+
+                    {!! Form::open(['method'=>'DELETE',
+                    'route' => ['plan.remove', $plan->id]])  !!}
+                    <button onclick=" return confirm('Ви точно хочете видалити?')"
+                            style="
+                            background: transparent;
+                            border: none;
+                            padding: 0px;
+                                  ">
+                        <i class="glyphicon glyphicon-remove" style="color: #337ab7"></i>
+                    </button>
+                    {!! Form::close() !!}
+                </td>
             </tr>
         @endforeach
         </tbody>

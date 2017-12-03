@@ -231,7 +231,7 @@
 <section class="bg-dark text-white">
     <div class="container text-center">
         <h2 class="mb-4">Хочу розпочати роботу вже зараз!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="#">Розпочати роботу!</a>
+        <a class="btn btn-light btn-xl sr-button" href="main">Розпочати роботу!</a>
     </div>
 </section>
 
