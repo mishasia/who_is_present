@@ -43,4 +43,8 @@ class Teacher extends Model
         return $this->belongsTo(Department::class);
     }
 
+    public function plans()
+    {
+        return $this->hasMany(Plan::class);
+    }
 }

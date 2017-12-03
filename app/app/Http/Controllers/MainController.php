@@ -18,6 +18,7 @@ class MainController extends Controller
     public function teacher($id)
     {
        $teachers = Teacher::with('status', 'highStatus')
+           ->where('department_id',$id)
            ->get();
 
         $departments = Department::all();

@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 <body>
@@ -77,7 +78,7 @@
                 <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            {{  menu('left menu', 'menus/left_menu') }}
+                            {{ menu('left menu', 'menus/left_menu') }}
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.master');
 });
 
 
@@ -32,5 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/plan/add', 'PlanController@add')->name('plan.add');
 Route::get('/plan/history', 'PlanController@history')->name('plan.history');
 Route::post('/plan/save', 'PlanController@save')->name('plan.save');
-Route::get('/layouts/main', 'MainController@main')->name('layouts.main');
+Route::get('/main', 'MainController@main')->name('layouts.main');
 Route::get('main/{id}/teacher', 'MainController@teacher')->name('main.teacher');
+
+Route::post('/plans-by-teacher/{id}', 'PlanController@plansByTeacher');
