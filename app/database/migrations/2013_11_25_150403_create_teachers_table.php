@@ -17,13 +17,11 @@ class CreateTeachersTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email')->unique();
-            $table->string('password');
             $table->dateTime('born_date');
+            $table->string('avatar')->default('teacher_avatar.png');
             $table->unsignedInteger('status_id')->nullable();
             $table->unsignedInteger('high_status_id')->nullable();
             $table->unsignedInteger('department_id')->nullable();
-            $table->unsignedInteger('plan_id')->nullable();
 
             $table->foreign('department_id')
                 ->references('id')
@@ -38,12 +36,6 @@ class CreateTeachersTable extends Migration
                 ->on('high_statuses')
                 ->onDelete('cascade');
 
-            $table->foreign('plan_id')
-                ->references('id')
-                ->on('plans')
-                ->onDelete('cascade');
-
-            $table->rememberToken();
             $table->timestamps();
         });
     }

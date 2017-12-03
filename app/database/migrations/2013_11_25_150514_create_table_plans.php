@@ -15,8 +15,16 @@ class CreateTablePlans extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->string('comment');
+            $table->string('comment')->nullable();
+            $table->date('date_start')->nullable();
+            $table->date('date_end')->nullable();
+            $table->unsignedInteger('teacher_id')->nullable();
+
+            $table->foreign('teacher_id')
+                ->references('id')
+                ->on('teachers')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
