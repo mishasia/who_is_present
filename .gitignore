@@ -3,3 +3,5 @@ docker/mysql/
 app/vendor
 .idea/
 node_modules
+app/public/css/app.css
+app/public/js/app.js
