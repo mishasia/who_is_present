@@ -53,7 +53,6 @@ class PlanController extends Controller
     public function update(Request $request, $id)
     {
         $plans=Plan::find($id);
-        //dd($request);
         $plans->fill($request->all());
         $plans->save();
         return redirect()->route('plan.history');
