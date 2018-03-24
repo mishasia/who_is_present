@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('layouts.master');
 });
@@ -38,3 +40,7 @@ Route::get('/teacher/edit', 'TeacherController@edit')->name('teacher.edit');
 Route::put('/teacher/{id}update', 'TeacherController@update')->name('teacher.update');
 Route::post('/teacher/{id}change-status', 'TeacherController@changeStatus')->name('teacher.changeStatus');
 Route::post('/plans-by-teacher/{id}', 'PlanController@plansByTeacher');
+Route::get('/chat', 'ChatController@index');
+Route::post('/chat/message/save', 'ChatController@save');
+Route::get('/chat/message/all', 'ChatController@getMessages');
+Route::get('/teacher', 'TeacherController@getTeacher');
