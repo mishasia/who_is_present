@@ -17,8 +17,8 @@
         <tbody>
         @foreach($teachers as $teacher)
             <tr>
-                <td>{{ $teacher->first_name }}</td>
                 <td>{{ $teacher->last_name }}</td>
+                <td>{{ $teacher->first_name }}</td>
                 <td>{{ $teacher->status->name }}</td>
                 <td>{{ $teacher->highStatus->name }}</td>
                 <td>@include('partials.teacher_present', [

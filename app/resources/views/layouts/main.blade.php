@@ -68,7 +68,8 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="panel panel-default">
-                    <div class="panel-body">
+                    <div class="panel-body"><h4>Кафедри:</h4>
+
                         @foreach($departments as $department)
                             <li><a href="{{route('main.teacher',$department->id )}}">{{ $department->name }}</a></li>
                         @endforeach
