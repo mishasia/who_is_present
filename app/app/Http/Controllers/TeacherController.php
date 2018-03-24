@@ -51,4 +51,11 @@ class TeacherController extends Controller
             'isPresent' => $teacher->is_present,
         ];
     }
+
+    public function getTeacher()
+    {
+        $teacher = Auth::user()->teacher;
+
+        return $teacher;
+    }
 }
