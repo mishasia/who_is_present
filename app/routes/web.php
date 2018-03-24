@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('layouts.master');
 });
 
-
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
@@ -38,6 +35,6 @@ Route::post('/plan/save', 'PlanController@save')->name('plan.save');
 Route::get('/main', 'MainController@main')->name('layouts.main');
 Route::get('main/{id}/teacher', 'MainController@teacher')->name('main.teacher');
 Route::get('/teacher/edit', 'TeacherController@edit')->name('teacher.edit');
-Route::put('/teacher/{id}/update', 'TeacherController@update')->name('teacher.update');
-
+Route::put('/teacher/{id}update', 'TeacherController@update')->name('teacher.update');
+Route::post('/teacher/{id}change-status', 'TeacherController@changeStatus')->name('teacher.changeStatus');
 Route::post('/plans-by-teacher/{id}', 'PlanController@plansByTeacher');
