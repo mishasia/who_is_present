@@ -5,7 +5,8 @@
     <input type="hidden" name="_method" value="PUT">
     <div class="form-group">
         {!! Form::label('comment', 'Коментарій:') !!}
-        {!! Form::textarea('comment', value($plans->comment), ['class' => 'form-control', 'rows' => 5, 'required']) !!}
+        {!! Form::textarea('comment', value($plans->comment),
+         ['class' => 'form-control', 'rows' => 5, 'required']) !!}
     </div>
 
     <div class="form-group">

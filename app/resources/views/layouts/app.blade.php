@@ -54,8 +54,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    <img class="avatar-img" src="{{ Auth::user()->teacher->avatar }}" alt="">
+                                    <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
@@ -86,7 +87,25 @@
                             {{ menu('left menu', 'menus/left_menu') }}
                         </div>
                     </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <center><h3>Ви на роботі?</h3></center>
+                            <link  href="{{ asset('css/style.css') }}" rel="stylesheet" >
+                            <input
+                                data-id="{{ Auth::user()->id }}"
+                                data-is_present="{{ Auth::user()->teacher->is_present }}"
+                                class="checkbox"
+                                type="checkbox"
+                                id="codepen"
+                            />
+                            <label for="codepen"></label>
+                        </div>
+                    </div>
+
                 </div>
+
+
                 <div class="col-md-9">
                     <div class="panel panel-default">
                         <div class="panel-heading"><h3>Управління</h3></div>
@@ -102,6 +121,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
     @yield('scripts')
 </body>
 </html>
