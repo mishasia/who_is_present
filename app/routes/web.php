@@ -44,3 +44,4 @@ Route::get('/chat', 'ChatController@index');
 Route::post('/chat/message/save', 'ChatController@save');
 Route::get('/chat/message/all', 'ChatController@getMessages');
 Route::get('/teacher', 'TeacherController@getTeacher');
+Route::get('/department-members-count/{id}', 'DepartmentController@index');
