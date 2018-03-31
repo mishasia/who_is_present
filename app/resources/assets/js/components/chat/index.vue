@@ -1,6 +1,6 @@
 <template>
     <div class="chat">
-        <StatusBar />
+        <StatusBar :membersAmount="membersAmount" />
         <Messages :teacher="teacher" :messages="messages" />
         <InputForm @on-send="onMsgSend" />
     </div>
@@ -17,16 +17,30 @@
         data: () => ({
            messages: [],
            teacher: {},
+            membersAmount: 0,
         }),
         mounted() {
-            this.fetchAllData()
+            this.fetchAllData().then((teacher) => {
+                setInterval(this.updateMessagesCallback.bind(this, teacher.id), 1000)
+                this.fetchMembersAmount(teacher)
+            })
         },
         methods: {
+            fetchMembersAmount(teacher) {
+                axios.get(`/department-members-count/${teacher.department_id}`)
+                    .then(response => this.membersAmount = response.data)
+            },
+            updateMessages(newMessages) {
+                this.messages = newMessages
+            },
+            updateMessagesCallback(teacherId) {
+                this.fetchAllMessages(teacherId)
+                    .then(this.updateMessages)
+            },
             onMsgSend(message) {
                 this.sendMsg(message).then(() => {
-                    this.fetchAllMessages(this.teacher.id).then(messages => {
-                        this.messages = messages
-                    })
+                    this.fetchAllMessages(this.teacher.id)
+                        .then(this.updateMessages)
                 })
             },
             sendMsg(message) {
@@ -45,13 +59,16 @@
                 }).then(response => response.data)
             },
             fetchAllData() {
-                axios.get('/teacher').then((response) => {
-                    const teacher = response.data
-                    this.fetchAllMessages(teacher.id).then(messages => {
-                        this.messages = messages
-                        this.teacher = teacher
+                return axios.get('/teacher')
+                    .then((response) => {
+                        const teacher = response.data
+                        this.fetchAllMessages(teacher.id)
+                            .then(messages => {
+                                this.messages = messages
+                                this.teacher = teacher
+                            })
+                        return Promise.resolve(teacher)
                     })
-                })
             }
         }
     }

@@ -3,7 +3,8 @@
         <div v-for="message in messages">
             <Message
                 :your="checkIsYour(message.sender.id)"
-                :author="getFullName(message.sender.first_name, message.sender.last_name)"
+                :authorName="getFullName(message.sender.first_name, message.sender.last_name)"
+                :authorData="message.sender"
                 :message="message.message"
                 :date="message.created_at"
             />
