@@ -48,6 +48,9 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Контакти</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ route('login') }}">Увійти</a>
+                </li>
             </ul>
         </div>
     </div>
