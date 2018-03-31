@@ -36,15 +36,9 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <center><h3>Ви на роботі?</h3></center>
-                            <link  href="{{ asset('css/style.css') }}" rel="stylesheet" >
-                            <input
-                                data-id="{{ Auth::user()->id }}"
-                                data-is_present="{{ Auth::user()->teacher->is_present }}"
-                                class="checkbox"
-                                type="checkbox"
-                                id="codepen"
-                            />
-                            <label for="codepen"></label>
+                            @if (Auth::user())
+                                @include('widget/status-button')
+                            @endif
                         </div>
                     </div>
 

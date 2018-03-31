@@ -33,11 +33,6 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('department_id', 'Кафедра:') !!}
-        {!! Form::select('department_id', $departments, $teacher->department_id, ['class' => 'form-control',  'required']) !!}
-    </div>
-
-    <div class="form-group">
         {!! Form::label('avatar', 'Аватар:') !!}
         {!! Form::file('avatar', null,
          ['class' => 'form-control']) !!}

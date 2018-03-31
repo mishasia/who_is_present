@@ -30,7 +30,7 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <img class="avatar-img" src="{{ Auth::user()->teacher->avatar }}" alt="">
+                                <img class="avatar-img" src="/{{ Auth::user()->teacher->avatar }}" alt="">
                                 <span class="caret"></span>
                             </a>
 
