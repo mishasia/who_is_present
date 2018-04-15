@@ -9,4 +9,7 @@
 
 .avatar-img {
     max-width: 40px !important;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
 }
