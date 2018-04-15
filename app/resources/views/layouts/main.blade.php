@@ -24,7 +24,10 @@
                 <div class="panel panel-default">
 
 
-                    <div class="panel-body"><h4>Редагувати особисті дані:</h4>
+                    <div class="panel-body">
+                        <div class="panel-body">
+                            {{ menu('left menu student', 'menus/left_menu_student') }}
+                        </div>
 
 
                     </div>
