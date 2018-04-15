@@ -29,4 +29,13 @@ class CommentController extends Controller
 
         return back();
     }
+
+    public function history($id)
+    {
+        $comments = Comment::with('student')->where('plan_id', $id)->get();
+        return view("comment.history",
+            compact('comments'));
+    }
+
+
 }

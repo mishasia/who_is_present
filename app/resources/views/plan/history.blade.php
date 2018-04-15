@@ -8,6 +8,7 @@
             <th>Коментар</th>
             <th>Дата початку</th>
             <th>Дата закінчення</th>
+            <th>Коментарі</th>
             <th>Дія</th>
         </tr>
         </thead>
@@ -17,6 +18,7 @@
                 <td>{{ $plan->comment }}</td>
                 <td>{{ $plan->date_start }}</td>
                 <td>{{ $plan->date_end }}</td>
+                <td><a class="btc btc-primary" href="{{ route('comment.history', $plan->id) }}">Коментарі</a></td>
                 <td>
                     <a href="{{ route('plan.edit', $plan->id) }}"> <i class="glyphicon glyphicon-edit"></i>  </a>
 
