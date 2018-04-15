@@ -29,13 +29,11 @@
                     <li class="dropdown">
                         @if(Auth::user()->student_id)
                             <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-
                                 <img class="avatar-img" src="/{{ Auth::user()->student->avatar }}" alt="">
                                 <span class="caret"></span>
                             </a>
                         @else
-                        <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-
+                            <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             <img class="avatar-img" src="/{{ Auth::user()->teacher->avatar }}" alt="">
                             <span class="caret"></span>
                         </a>
