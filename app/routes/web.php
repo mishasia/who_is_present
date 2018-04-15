@@ -45,3 +45,7 @@ Route::post('/chat/message/save', 'ChatController@save');
 Route::get('/chat/message/all', 'ChatController@getMessages');
 Route::get('/teacher', 'TeacherController@getTeacher');
 Route::get('/department-members-count/{id}', 'DepartmentController@index');
+Route::get('/student/edit', 'StudentController@edit')->name('student.edit');
+Route::put('/student/{id}update', 'StudentController@update')->name('student.update');
+Route::get('/comment', 'CommentController@index')->name('comment');
+Route::post('/comment', 'CommentController@save')->name('comment.save');
