@@ -15,13 +15,14 @@ $(document).ready(function () {
 
             let tableBody = "";
 
-            $.each(response.data.plans, (index, value) => {
+            $.each(response.data.plans, (index, plan) => {
                 let str =
                     '<tr>' +
                         '<td>' + (index + 1) + '</td>' +
-                        '<td>' + value.comment + '</td>' +
-                        '<td>' + value.date_start + '</td>' +
-                        '<td>' + value.date_end + '</td>' +
+                        '<td>' + plan.comment + '</td>' +
+                        '<td>' + plan.date_start + '</td>' +
+                    '<td>' + plan.date_end + '</td>' +
+                    '<td><a class="btc btc-primary" href="/comment?plan_id=' + plan.id + '">Коментарі</a></td>' +
                     '</tr>';
                 tableBody += str;
             });
