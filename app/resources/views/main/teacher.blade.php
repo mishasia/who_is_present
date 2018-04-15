@@ -8,6 +8,7 @@
         <tr>
             <th>Прізвище</th>
             <th>Ім'я</th>
+            <th>По-батькові</th>
             <th>Статус</th>
             <th>Докторат</th>
             <th>Присутність</th>
@@ -19,6 +20,7 @@
             <tr>
                 <td>{{ $teacher->last_name }}</td>
                 <td>{{ $teacher->first_name }}</td>
+                <td>{{ $teacher->middle_name }}</td>
                 <td>{{ $teacher->status->name }}</td>
                 <td>{{ $teacher->highStatus->name }}</td>
                 <td>@include('partials.teacher_present', [
@@ -60,6 +62,7 @@
                                 <th>Подія</th>
                                 <th>Початок</th>
                                 <th>Кінець</th>
+                                <th>Коментарі</th>
                             </tr>
                             </thead>
                             <tbody class="js-plan-content">
