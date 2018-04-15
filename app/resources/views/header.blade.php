@@ -25,30 +25,36 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                @guest
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    @else
-                        <li class="dropdown">
+                @auth
+                    <li class="dropdown">
+                        @if(Auth::user()->student_id)
                             <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <img class="avatar-img" src="/{{ Auth::user()->teacher->avatar }}" alt="">
+
+                                <img class="avatar-img" src="/{{ Auth::user()->student->avatar }}" alt="">
                                 <span class="caret"></span>
                             </a>
+                        @else
+                        <a href="#" class="avatar-img-wrap dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
 
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+                            <img class="avatar-img" src="/{{ Auth::user()->teacher->avatar }}" alt="">
+                            <span class="caret"></span>
+                        </a>
+                        @endif
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                        @endguest
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>
