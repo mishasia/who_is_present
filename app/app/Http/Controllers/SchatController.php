@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SchatController extends Controller
 {
-    private $smessageService;
+    private $schatService;
 
     public function __construct()
     {
