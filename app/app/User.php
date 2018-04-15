@@ -31,4 +31,9 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->belongsTo(Teacher::class);
     }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }
