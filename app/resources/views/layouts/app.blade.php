@@ -35,10 +35,12 @@
 
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <center><h3>Ви на роботі?</h3></center>
-                            @if (Auth::user())
+                            @auth
+                            @if (Auth::user()->teacher_id)
+                                <center><h3>Ви на роботі?</h3></center>
                                 @include('widget/status-button')
                             @endif
+                            @endauth
                         </div>
                     </div>
 
