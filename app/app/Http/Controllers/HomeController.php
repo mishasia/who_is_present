@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (auth()->user()->student_id) {
+            return redirect()->route('layouts.main');
+        }
         return view('home');
     }
 }
