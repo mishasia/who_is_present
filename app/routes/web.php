@@ -49,3 +49,8 @@ Route::get('/student/edit', 'StudentController@edit')->name('student.edit');
 Route::put('/student/{id}update', 'StudentController@update')->name('student.update');
 Route::get('/comment', 'CommentController@index')->name('comment');
 Route::post('/comment', 'CommentController@save')->name('comment.save');
+Route::get('/schat', 'SchatController@index');
+Route::post('/schat/message/save', 'SchatController@save');
+Route::get('/schat/message/all', 'SchatController@getMessages');
+Route::get('/student', 'StudentController@getStudent');
+
