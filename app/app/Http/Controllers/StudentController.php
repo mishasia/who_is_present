@@ -16,24 +16,22 @@ class StudentController extends Controller
 {
     public function edit()
     {
+      $departments = Department::all();
       $student = Student::find(Auth::user()->student->id);
-      $group = Group::pluck('name', 'id');
 
-      $departments = Department::pluck('name', 'id');
 
       return view('student.edit',  compact(
           'student',
-          'group'
-
+          'departments'
       ));
     }
 
     public function update(Request $request, $id)
     {
+
         $file = $request->avatar;
         $student = Student::find($id);
         $student->fill($request->all());
-
         if ($file) {
             $path = $file->store('public/avatars');
             $pathForDb = str_replace('public', 'storage', $path);
@@ -44,7 +42,7 @@ class StudentController extends Controller
         return redirect()->route('home');
     }
 
-    public function getTeacher()
+    public function getStudent()
     {
         $student = Auth::user()->student;
 
