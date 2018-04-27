@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3>Редагувати оголошення:</h3>
     {!! Form::open(['route' => ['plan.update', $plans->id,'method' => 'PUT']] ) !!}
     <input type="hidden" name="_method" value="PUT">
     <div class="form-group">

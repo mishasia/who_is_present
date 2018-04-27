@@ -17,16 +17,18 @@ class MainController extends Controller
 
     public function teacher($id)
     {
-       $teachers = Teacher::with('status', 'highStatus')
+       $teachers = Teacher::with('status', 'highStatus', 'department')
            ->where('department_id',$id)
            ->get();
-
         $departments = Department::all();
+        $get_department=Department::find($id);
 
         //dd($teachers);
         return view('main/teacher', compact(
             'teachers',
-            'departments'
+            'departments',
+            'get_department'
+
         ));
     }
 }

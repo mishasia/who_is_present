@@ -2,8 +2,17 @@
 
 @section('content')
 
+   <h3>Редагувати особиті дані:</h3>
     {!! Form::open(['files'=>'true', 'route' => ['teacher.update', $teacher->id,'method' => 'PUT']] ) !!}
     <input type="hidden" name="_method" value="PUT">
+
+
+    <div class="form-group">
+        {!! Form::label('last_name', 'Прізвище:') !!}
+        {!! Form::text('last_name', value($teacher->last_name),
+         ['class' => 'form-control', 'required']) !!}
+    </div>
+
     <div class="form-group">
         {!! Form::label('first_name', 'Ім\'я:') !!}
         {!! Form::text('first_name', value($teacher->first_name),
@@ -11,8 +20,8 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('last_name', 'Прізвище:') !!}
-        {!! Form::text('last_name', value($teacher->last_name),
+        {!! Form::label('middle_name', 'По-батькові:') !!}
+        {!! Form::text('middle_name', value($teacher->middle_name),
          ['class' => 'form-control', 'required']) !!}
     </div>
 

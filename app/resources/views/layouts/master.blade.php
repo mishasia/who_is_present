@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('Education meetings', ' Education meetings') }}</title>
 
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
@@ -30,7 +30,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ config('app.name') }}</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ 'Education meetings' }}</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,15 +60,26 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h1 class="text-uppercase">
-                    <strong>Ми пропонуємо зручний спосіб керувати Вашою активністю</strong>
-                </h1>
-                <hr>
+                <h2 class="text-uppercase">
+                    <strong>Система координації та відображення активності навчального процесу</strong>
+                </h2>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">
-                    Викладачі заходять на особисту сторінку та керують своєю активністю в університеті.
-                    Студенти отримують інформацію наявність чи відсутність викладача в данний момент!
+                <hr>
+                <p class="text-faded mb-6">
+                    ВИКЛАДАЧІ: можуть заходити в особистий кабінет, редагувати особисті дані, користуватися чатом, додавати оголошення та переглядати для них коментарі.
+                </p>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <hr>
+                <p class="text-faded mb-6">
+                    СТУДЕНТИ: можуть заходити в особистий кабінет, редагувати особисті дані, користуватися чатом, переглядати та коментувати оголешення викладача та переглядати чи викладач знаходиться в університеті.
+                </p>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <hr>
+                <p class="text-faded mb-6">
+                    АДМІНІСТРАТОРИ: займаються адмініструванням та технічною підтримкою сайту.
                 </p>
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Дізнатись більше</a>
             </div>
@@ -106,28 +117,35 @@
                 <div class="service-box mt-5 mx-auto">
                     <i class="fa fa-4x fa-home text-primary mb-3 sr-icons"></i>
                     <h4 class="mb-3">Особистий кабінет</h4>
-                    <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+                    <p class="text-muted mb-0">1</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box mt-5 mx-auto">
                     <i class="fa fa-4x fa-check-square-o text-primary mb-3 sr-icons"></i>
-                    <h4 class="mb-3">Керування статусом</h4>
-                    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+                    <h4 class="mb-3">Присутність в університеті</h4>
+                    <p class="text-muted mb-0">2</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box mt-5 mx-auto">
                     <i class="fa fa-4x fa-pencil-square-o text-primary mb-3 sr-icons"></i>
-                    <h4 class="mb-3">Створення подій</h4>
-                    <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+                    <h4 class="mb-3">Оголошеня</h4>
+                    <p class="text-muted mb-0">3</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box mt-5 mx-auto">
                     <i class="fa fa-4x fa-eye text-primary mb-3 sr-icons"></i>
-                    <h4 class="mb-3">Перегляд подій</h4>
-                    <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+                    <h4 class="mb-3">Коментарі оголошень</h4>
+                    <p class="text-muted mb-0">4</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fas fa-comment text-primary mb-3 sr-icons"></i>
+                    <h4 class="mb-3">Спілкування в чаті</h4>
+                    <p class="text-muted mb-0">5</p>
                 </div>
             </div>
         </div>

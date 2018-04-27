@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <h3>Додати оголошення:</h3>
     {!! Form::open(['route' => 'plan.save']) !!}
 
     <div class="form-group">
-        {!! Form::label('comment', 'Коментарій:') !!}
+        {!! Form::label('comment', 'Оголошення:') !!}
         {!! Form::textarea('comment', null, ['class' => 'form-control', 'rows' => 5, 'required']) !!}
     </div>
 

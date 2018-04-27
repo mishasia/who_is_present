@@ -2,7 +2,9 @@
 
 @section('teacher')
 
+
     <div class="table-responsive">
+        <h3>Список викладачів на кафедрі {{$get_department->name}}:</h3>
     <table class="table">
         <thead>
         <tr>
@@ -48,7 +50,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Інформація про плани для викладача
+                    <h4 class="modal-title">Інформація про оголошення викладача
                         <span class="js-teacher-name"></span>
                     </h4>
                 </div>

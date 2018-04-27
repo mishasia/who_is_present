@@ -11,6 +11,7 @@
             <th>Автор</th>
             <th>Коментар</th>
             <th>Дата створення</th>
+            <th>Дія створення</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +20,19 @@
                     <td>{{ $comment->student->last_name }}  {{ $comment->student->first_name  }}</td>
                     <td>{{ $comment->text }}</td>
                     <td>{{ $comment->created_at }}</td>
+                    <td>
+                        {!! Form::open(['method'=>'DELETE',
+                        'route' => ['comment.remove', $comment->id]])  !!}
+                        <button onclick=" return confirm('Ви точно хочете видалити?')"
+                                style="
+                            background: transparent;
+                            border: none;
+                            padding: 0px;
+                                  ">
+                            <i class="glyphicon glyphicon-remove" style="color: #337ab7"></i>
+                        </button>
+                        {!! Form::close() !!}
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <h3>Історія оголошеннь:</h3>
     <table class="table">
         <thead>
         <tr>

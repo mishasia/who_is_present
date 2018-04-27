@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Styles -->
+
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('Education meetings', 'Education meetings') }}</title>
 
 </head>
 <body>
@@ -45,7 +47,7 @@
             </div>
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Управління</h3></div>
+
 
                     <div class="panel-body">
                         @yield('teacher')

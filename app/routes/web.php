@@ -54,4 +54,4 @@ Route::get('/schat', 'SchatController@index');
 Route::post('/schat/message/save', 'SchatController@save');
 Route::get('/schat/message/all', 'SchatController@getMessages');
 Route::get('/student', 'StudentController@getStudent');
-
+Route::delete('/comment/{id}/remove', 'CommentController@remove')->name('comment.remove');

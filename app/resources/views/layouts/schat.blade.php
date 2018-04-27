@@ -10,7 +10,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('Education meetings', 'Education meetings') }}</title>
 
 </head>
 <body>

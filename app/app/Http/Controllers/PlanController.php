@@ -42,8 +42,7 @@ class PlanController extends Controller
         ];
     }
 
-    public function edit($id)
-    {
+    public function edit($id)    {
 
         $plans=Plan::find($id);
 
@@ -58,11 +57,9 @@ class PlanController extends Controller
         return redirect()->route('plan.history');
     }
 
-    public function remove($id)
-    {
+    public function remove($id)    {
 
         $plans=Plan::find($id)->delete();
-
         return redirect()->route('plan.history');
     }
 }

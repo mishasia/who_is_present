@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('Education meetings', ' Education meetings') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -49,7 +49,7 @@
 
                 <div class="col-md-9">
                     <div class="panel panel-default">
-                        <div class="panel-heading"><h3>Управління</h3></div>
+
 
                         <div class="panel-body">
                             @yield('content')
