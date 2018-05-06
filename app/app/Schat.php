@@ -16,10 +16,6 @@ class Schat extends Model
         'sender_id', 'message', 'group_id'
     ];
 
-    public static function where($string, $departmentId)
-    {
-    }
-
     public function sender()
     {
         return $this->belongsTo(Student::class);

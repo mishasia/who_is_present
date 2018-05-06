@@ -1,7 +1,7 @@
 @extends('layouts.schat')
 
 @section('scontent')
-    <div id="apps">
+    <div id="app">
         <Schat />
     </div>
 @endsection

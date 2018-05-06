@@ -16,13 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('chat', require('./components/chat'));
+Vue.component('schat', require('./components/schat'));
 
 const app = new Vue({
     el: '#app'
-});
-
-Vue.component('schat', require('./components/schat'));
-
-const apps = new Vue({
-    el: '#apps'
 });

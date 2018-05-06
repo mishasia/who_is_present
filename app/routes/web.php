@@ -38,7 +38,7 @@ Route::get('/main', 'MainController@main')->name('layouts.main');
 Route::get('main/{id}/teacher', 'MainController@teacher')->name('main.teacher');
 Route::get('/teacher/edit', 'TeacherController@edit')->name('teacher.edit');
 Route::put('/teacher/{id}update', 'TeacherController@update')->name('teacher.update');
-Route::post('/teacher/{id}change-status', 'TeacherController@changeStatus')->name('teacher.changeStatus');
+Route::post('/teacher/change-status', 'TeacherController@changeStatus')->name('teacher.changeStatus');
 Route::post('/plans-by-teacher/{id}', 'PlanController@plansByTeacher');
 Route::get('/chat', 'ChatController@index');
 Route::post('/chat/message/save', 'ChatController@save');
@@ -50,8 +50,10 @@ Route::put('/student/{id}update', 'StudentController@update')->name('student.upd
 Route::get('/comment', 'CommentController@index')->name('comment');
 Route::post('/comment', 'CommentController@save')->name('comment.save');
 Route::get('/comment/{id}/history', 'CommentController@history')->name('comment.history');
+Route::delete('/comment/{id}/remove', 'CommentController@remove')->name('comment.remove');
+Route::get('/student', 'StudentController@getStudent');
+
 Route::get('/schat', 'SchatController@index');
 Route::post('/schat/message/save', 'SchatController@save');
 Route::get('/schat/message/all', 'SchatController@getMessages');
-Route::get('/student', 'StudentController@getStudent');
-Route::delete('/comment/{id}/remove', 'CommentController@remove')->name('comment.remove');
+Route::get('/schat/members-count/{id}', 'SchatController@membersCount');

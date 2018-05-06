@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use App\Group;
 use App\HighStatus;
 use App\Schat;
 use App\Service\SchatService;
@@ -21,10 +22,18 @@ class SchatController extends Controller
         $this->schatService = new SchatService();
     }
 
+    public function membersCount($id)
+    {
+        return count(Group::with('students')
+            ->where('id', $id)
+            ->get()
+            ->toArray()[0]['students']);
+    }
+
     public function index()
     {
         $departments = Department::all();
-        return view("schat/sindex", compact(
+        return view("schat/index", compact(
             'departments'
         ));
     }

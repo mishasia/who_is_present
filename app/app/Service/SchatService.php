@@ -6,15 +6,15 @@ use Carbon\Carbon;
 
 class SchatService
 {
-    public function getMessagesByGroupAndTime($departmentId, $createTime)
+    public function getMessagesByGroupAndTime($groupId, $createTime)
     {
         if ($createTime) {
-            return Schat::where('group_id', $departmentId)
+            return Schat::where('group_id', $groupId)
                 ->where('created_at', '>=', $createTime)
                 ->with('sender')
                 ->get();
         }
-        return Schat::where('group_id', $departmentId)
+        return Schat::where('group_id', $groupId)
             ->with('sender')
             ->get();
     }

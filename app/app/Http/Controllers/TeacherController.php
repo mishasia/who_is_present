@@ -42,11 +42,14 @@ class TeacherController extends Controller
         return redirect()->route('home');
     }
 
-    public function changeStatus(Request $request, $id)
+    public function changeStatus()
     {
-        $teacher = Teacher::find($id);
+        $user = auth()->user();
+        $teacherId = $user->teacher_id;
+        $teacher = Teacher::find($teacherId);
         $teacher->fill(['is_present' => !$teacher->is_present ]);
         $teacher->save();
+
         return [
             'isPresent' => $teacher->is_present,
         ];
